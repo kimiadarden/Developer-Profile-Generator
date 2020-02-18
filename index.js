@@ -54,35 +54,46 @@ function promptUser() {
 
 function generateReadme(answers) {
   return `
+
+  #   ${answers.Title}
    ## Description
 
+   ${answers.Description}
 
 
   ## Installation
 
+  ${answers.Installation}
 
 
    ## Usage
 
+   ${answers.Usage}
 
 
   ## Contributing
 
+  ${answers.username}
+  ${answers.Email}
+
   ## License
+  ${answers.License}
+
+  
   `;
 }
 
 promptUser()
 
-  .then(function(answers) {
+  .then(function (answers) {
     const readme = generateReadme(answers);
 
     return writeFileAsync("readmee.md", readme);
   })
-  .then(function() {
+  .then(function () {
     console.log("Successfully wrote to readmee.md");
   })
-  .catch(function(err) {
+  .catch(function (err) {
     console.log(err);
   });
 

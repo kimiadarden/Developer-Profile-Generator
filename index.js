@@ -31,13 +31,13 @@ function promptUser() {
       message: "Did you use any of the below Licenses?",
       name: "License",
       choices: [
-        "1", 
-        "2", 
-        "3", 
-        "4"
+        "MIT",
+        "IBM",
+        "ISC",
+        "GNU"
       ]
     },
-   
+
     {
       type: "input",
       name: "Usage",
@@ -52,6 +52,25 @@ function promptUser() {
 }
 
 
+function generateReadme(answers) {
+  return `
+   ## Description
 
 
+
+  ## Installation
+
+
+
+   ## Usage
+
+
+
+  ## Contributing
+
+  ## License
+  `;
+}
+
+promptUser()
 

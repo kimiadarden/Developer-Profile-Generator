@@ -74,3 +74,15 @@ function generateReadme(answers) {
 
 promptUser()
 
+  .then(function(answers) {
+    const readme = generateReadme(answers);
+
+    return writeFileAsync("readmee.md", readme);
+  })
+  .then(function() {
+    console.log("Successfully wrote to readmee.md");
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
+

@@ -1,16 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const axios = require("axios");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser() {
   return inquirer.prompt([
-    {
-      type: "input",
-      name: "username",
-      message: "What is your Github user name?"
-    },
+    
     {
       type: "input",
       name: "Title",
@@ -47,69 +44,77 @@ function promptUser() {
       type: "input",
       name: "Email",
       message: "What is your Email address?"
+    },
+    {
+      type: "input",
+      name: "username",
+      message: "What is your Github user name?"
     }
-  ]);
+  ])
 }
+
 
 
 function generateReadme(answers) {
   return `
-
-  #   ${answers.Title}
-   ## Description
-
-   ${answers.Description}
-
-
+  
+  #   Title :${answers.Title}
+  
+  
+  ## Description
+  
+  ${answers.Description}
+  
+  
   ## Installation
-
+  
   ${answers.Installation}
-
-
-   ## Usage
-
-   ${answers.Usage}
-
-
+  
+  
+  ## Usage
+  
+  ${answers.Usage}
+  
+  
   ## Contributing
-
+  
   ## License
   ${answers.License}
   
   
-  ##Author :
+  ## Author 
   
   Github User name :  ${answers.username}
-
+  
   Email  Adress:   ${answers.Email}
-
+  
   <!DOCTYPE html>
   <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   </head>
   <body>
-   <a href="https://avatars1.githubusercontent.com/u/59711758?v=4">
-<img src="https://avatars1.githubusercontent.com/u/59711758?v=4" alt="avatar" height="48" width="48">
- </a>
-      
-    
-  
-  </body>
-  </html>
 
   
+  <a href=" https://github.com/${answers.username}.png?size=200">
+  <img src=" https://github.com/${answers.username}.png?size=200" alt="avatar" height="48" width="48">
+   </a>
+   
+   </body>
+   </html>
+   
+   
+   
+   `;
+  }
   
-  `;
-}
-
-promptUser()
-
+  promptUser()
+  
   .then(function (answers) {
     const readme = generateReadme(answers);
-
+    
     return writeFileAsync("readmee.md", readme);
   })
   .then(function () {
@@ -118,4 +123,18 @@ promptUser()
   .catch(function (err) {
     console.log(err);
   });
-
+  
+  
+  //second method of getting the user's avatar
+  // function usernameGenerater (username ) {
+  //   const queryUrl = `https://api.github.com/users/${username}`;
+  
+  //   axios.get(queryUrl).then(function(res) {
+  
+  //     var avatarGit= res.data.avatar_url;
+  //     // console.log(avatarGit);
+  //   })
+  // };
+  
+  
+  // usernameGenerater();

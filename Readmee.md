@@ -1,24 +1,23 @@
 
   
-  #   Title :hgfds
+  #   Title :Weather application
   
-  ----
 
   ## Description
   
-  jhgfds
+    a weather dashboard that will run in the browser and allow the users to access the weather for 1 day or 5 days
   
   ----
   ## Installation
   
-  jhgfds
+  
   
   ----
 
   ## Usage
   
   
-  > hgfd
+  > 
   
   ----
 
@@ -26,16 +25,16 @@
   ----
 
   ## License
-  undefined
+  ISC
   
   ----
 
   ## Author 
   
-  Github User name :  gf
+  Github User name :  kimiadarden
   
-  Email  Adress:   hgfd
+  Email  Adress:   kimiadarden@gmail.com
 
- ![Github Avatar](https://github.com/gf.png?=20x20)
+ ![Github Avatar](https://github.com/kimiadarden.png?=20x20)
 
    

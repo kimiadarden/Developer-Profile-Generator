@@ -83,7 +83,7 @@ function generateReadme(answers) {
   ----
 
   ## License
-  ${answers.License.choices}
+  ${answers.License}
   
   ----
 

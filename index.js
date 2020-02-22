@@ -60,16 +60,16 @@ function generateReadme(answers) {
   
   #   Title :${answers.Title}
   
-
   ## Description
   
   ${answers.Description}
   
   ----
+  
   ## Installation
   
   ${answers.Installation}
-  
+
   ----
 
   ## Usage
@@ -78,7 +78,7 @@ function generateReadme(answers) {
   > ${answers.Usage}
   
   ----
-
+  
   ## Contributing
   ----
 

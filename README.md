@@ -10,8 +10,10 @@
 
   ## Video demonstration : 
 
+![](developer-profile-generator.gif)
 
-  [![demonstration video](https://youtu.be/moiGU2aW3Oc)](https://youtu.be/moiGU2aW3Oc)
+
+
   
   
   
